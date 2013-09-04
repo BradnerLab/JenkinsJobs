@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import csv
+import os
 
 property_file_path = '/ark/home/jenkins/jobs/Bam_Plot/placeholder_data/selectionChoicesPropertyFile.txt'
 table_file_path    = '/mnt/d0-0/share/bradnerlab/projects/masterBamTable.txt'
@@ -9,6 +10,8 @@ table_file_path    = '/mnt/d0-0/share/bradnerlab/projects/masterBamTable.txt'
 #table_file_path    = '/Users/Shared/Jenkins/Home/jobs/Bam_Plot/placeholder_data/masterBamTable.txt'
 
 name_col = 3
+
+os.remove(property_file_path)
 
 with open(property_file_path, 'w') as property_file:
     property_file.write('selectionChoices=')
