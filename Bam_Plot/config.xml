@@ -13,7 +13,7 @@
           <visibleItemCount>5</visibleItemCount>
           <type>PT_MULTI_SELECT</type>
           <value></value>
-          <propertyFile>/Users/Shared/Jenkins/Home/jobs/Bam_Plot/placeholder_data/selectionChoicesPropertyFile.txt</propertyFile>
+          <propertyFile>/ark/home/jenkins/jobs/Bam_Plot/placeholder_data/selectionChoicesPropertyFile.txt</propertyFile>
           <propertyKey>selectionChoices</propertyKey>
           <defaultValue></defaultValue>
           <defaultPropertyFile></defaultPropertyFile>
