@@ -6,135 +6,19 @@
   <properties>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
-        <hudson.model.ChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.28">
           <name>selection</name>
-          <description>&lt;p&gt;Dataset selection, organized by genome, then by source, then by cell type.  The different categories of selections are listed below.  Please note that you can press a key to skip to the appropriate section (e.g. hit the &quot;b&quot; key when in the drop down menu to skip to the BE2C section).
-&lt;table style=&quot;border:1px solid black;border-collapse:collapse;&quot;&gt;
-&lt;tr&gt;
- &lt;th style=&quot;border:1px solid black;&quot;&gt;Selection&lt;/th&gt;
- &lt;th style=&quot;border:1px solid black;&quot;&gt;Genome&lt;/th&gt;
- &lt;th style=&quot;border:1px solid black;&quot;&gt;Source&lt;/th&gt;
- &lt;th style=&quot;border:1px solid black;&quot;&gt;Cell Type&lt;/th&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;LY1_*&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;Diffuse large B-cell lymphoma&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;LY1&lt;/td&gt;
-&lt;tr&gt;
-&lt;tr&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;MM1S_*&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;Multiple Myeloma&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;MM1S&lt;/td&gt;
-&lt;tr&gt;
-&lt;tr&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;BE2C_*&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;Neuroblastoma&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;BE2C&lt;/td&gt;
-&lt;tr&gt;
-&lt;tr&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;SKNAS_*&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;Neuroblastoma&lt;/td&gt;
- &lt;td style=&quot;border:1px solid black;&quot;&gt;SKNAS&lt;/td&gt;
-&lt;tr&gt;
-&lt;/table&gt;</description>
-          <choices class="java.util.Arrays$ArrayList">
-            <a class="string-array">
-              <string>LY1_BCL6_DMSO</string>
-              <string>LY1_BCL6_JQ1</string>
-              <string>LY1_BRD4_DMSO</string>
-              <string>LY1_BRD4_DMSO_2</string>
-              <string>LY1_BRD4_JQ1</string>
-              <string>LY1_BRD4_JQ1_2</string>
-              <string>LY1_E2F1_DMSO</string>
-              <string>LY1_E2F1_JQ1</string>
-              <string>LY1_H3K27AC_DMSO</string>
-              <string>LY1_H3K27AC_JQ1</string>
-              <string>LY1_H3K27ME3_DMSO</string>
-              <string>LY1_H3K27ME3_JQ1</string>
-              <string>LY1_H3K4ME3_DMSO</string>
-              <string>LY1_H3K4ME3_JQ1</string>
-              <string>LY1_MED1_WT</string>
-              <string>LY1_RNA_POL2_DMSO</string>
-              <string>LY1_RNA_POL2_DMSO_2</string>
-              <string>LY1_RNA_POL2_JQ1</string>
-              <string>LY1_RNA_POL2_JQ1_2</string>
-              <string>LY1_WCE_DMSO</string>
-              <string>LY1_WCE_DMSO_2</string>
-              <string>LY1_WCE_JQ1</string>
-              <string>LY1_WCE_JQ1_2</string>
-              <string>LY1_WCE_WT</string>
-              <string>MM1S_BRD4_150nM_JQ1</string>
-              <string>MM1S_BRD4_500nM_JQ1</string>
-              <string>MM1S_BRD4_50nM_JQ1</string>
-              <string>MM1S_BRD4_5nM_JQ1</string>
-              <string>MM1S_BRD4_5uM_JQ1</string>
-              <string>MM1S_BRD4_DMSO_1</string>
-              <string>MM1S_BRD4_DMSO_2</string>
-              <string>MM1S_BRD4_DMSO_MERGED</string>
-              <string>MM1S_CDK9_500nM_JQ1</string>
-              <string>MM1S_CDK9_50nM_JQ1</string>
-              <string>MM1S_CDK9_5nM_JQ1</string>
-              <string>MM1S_CDK9_5uM_JQ1</string>
-              <string>MM1S_CDK9_DMSO_1</string>
-              <string>MM1S_CDK9_DMSO_2</string>
-              <string>MM1S_CDK9_DMSO_MERGED</string>
-              <string>MM1S_CTCF</string>
-              <string>MM1S_DOT1L_LARS</string>
-              <string>MM1S_GR_DMSO</string>
-              <string>MM1S_H3K27AC_DMSO</string>
-              <string>MM1S_H3K4ME3_DMSO</string>
-              <string>MM1S_IRF4</string>
-              <string>MM1S_MED1_500nM_JQ1</string>
-              <string>MM1S_MED1_50nM_JQ1</string>
-              <string>MM1S_MED1_5nM_JQ1</string>
-              <string>MM1S_MED1_5uM_JQ1</string>
-              <string>MM1S_MED1_DMSO_1</string>
-              <string>MM1S_MED1_DMSO_2</string>
-              <string>MM1S_MED_DMSO_MERGED</string>
-              <string>MM1S_MYC_DMSO</string>
-              <string>MM1S_NFKB_MERGED</string>
-              <string>MM1S_RNA_POL2_150nM_JQ1</string>
-              <string>MM1S_RNA_POL2_24hr_JQ1</string>
-              <string>MM1S_RNA_POL2_500nM_JQ1</string>
-              <string>MM1S_RNA_POL2_50nM_JQ1</string>
-              <string>MM1S_RNA_POL2_5nM_JQ1</string>
-              <string>MM1S_RNA_POL2_5uM_JQ1</string>
-              <string>MM1S_RNA_POL2_DMSO</string>
-              <string>MM1S_RNA_POL2_DMSO_2</string>
-              <string>MM1S_RNA_POL2_DMSO_MERGED</string>
-              <string>MM1S_WCE_500nM_JQ1</string>
-              <string>MM1S_WCE_50nM_JQ1</string>
-              <string>MM1S_WCE_5nM_JQ1</string>
-              <string>MM1S_WCE_5uM_JQ1</string>
-              <string>MM1S_WCE_DMSO_1</string>
-              <string>MM1S_WCE_DMSO_2</string>
-              <string>MM1S_WCE_DMSO_MERGED</string>
-              <string>MM1S_WCE_GR</string>
-              <string>MM1S_WCE_WT</string>
-              <string>MM1S_p50</string>
-              <string>MM1S_p65</string>
-              <string>BE2C_BRD4</string>
-              <string>BE2C_H3K27AC</string>
-              <string>BE2C_H3K4ME3</string>
-              <string>BE2C_MYC</string>
-              <string>BE2C_MYCN</string>
-              <string>BE2C_RNA_POL2</string>
-              <string>BE2C_WCE</string>
-              <string>SKNAS_BRD4</string>
-              <string>SKNAS_H3K27AC</string>
-              <string>SKNAS_H3K4ME3</string>
-              <string>SKNAS_MYC</string>
-              <string>SKNAS_MYCN</string>
-              <string>SKNAS_RNA_POL2</string>
-              <string>SKNAS_WCE</string>
-              <string>SKNAS_WCE_2</string>
-            </a>
-          </choices>
-        </hudson.model.ChoiceParameterDefinition>
+          <description>&lt;p&gt;Dataset selection, organized by genome, then by source, then by cell type.  Hold down the control or command key to select more than one.  &lt;p&gt;The different categories of selections are listed below.  Please note that you can press a key to skip to the appropriate section (e.g. hit the &quot;b&quot; key when in the drop down menu to skip to the BE2C section).  &lt;table style=&quot;border:1px solid black;border-collapse:collapse;&quot;&gt; &lt;tr&gt;  &lt;th style=&quot;border:1px solid black;&quot;&gt;Selection&lt;/th&gt;  &lt;th style=&quot;border:1px solid black;&quot;&gt;Genome&lt;/th&gt;  &lt;th style=&quot;border:1px solid black;&quot;&gt;Source&lt;/th&gt;  &lt;th style=&quot;border:1px solid black;&quot;&gt;Cell Type&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;LY1_*&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;Diffuse large B-cell lymphoma&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;LY1&lt;/td&gt; &lt;tr&gt; &lt;tr&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;MM1S_*&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;Multiple Myeloma&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;MM1S&lt;/td&gt; &lt;tr&gt; &lt;tr&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;BE2C_*&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;Neuroblastoma&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;BE2C&lt;/td&gt; &lt;tr&gt; &lt;tr&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;SKNAS_*&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;Neuroblastoma&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;SKNAS&lt;/td&gt; &lt;tr&gt; &lt;/table&gt;</description>
+          <quoteValue>false</quoteValue>
+          <visibleItemCount>5</visibleItemCount>
+          <type>PT_MULTI_SELECT</type>
+          <value>LY1_BCL6_DMSO, LY1_BCL6_JQ1, LY1_BRD4_DMSO, LY1_BRD4_DMSO_2, LY1_BRD4_JQ1, LY1_BRD4_JQ1_2, LY1_E2F1_DMSO, LY1_E2F1_JQ1, LY1_H3K27AC_DMSO, LY1_H3K27AC_JQ1, LY1_H3K27ME3_DMSO, LY1_H3K27ME3_JQ1, LY1_H3K4ME3_DMSO, LY1_H3K4ME3_JQ1, LY1_MED1_WT, LY1_RNA_POL2_DMSO, LY1_RNA_POL2_DMSO_2, LY1_RNA_POL2_JQ1, LY1_RNA_POL2_JQ1_2, LY1_WCE_DMSO, LY1_WCE_DMSO_2, LY1_WCE_JQ1, LY1_WCE_JQ1_2, LY1_WCE_WT, MM1S_BRD4_150nM_JQ1, MM1S_BRD4_500nM_JQ1, MM1S_BRD4_50nM_JQ1, MM1S_BRD4_5nM_JQ1, MM1S_BRD4_5uM_JQ1, MM1S_BRD4_DMSO_1, MM1S_BRD4_DMSO_2, MM1S_BRD4_DMSO_MERGED, MM1S_CDK9_500nM_JQ1, MM1S_CDK9_50nM_JQ1, MM1S_CDK9_5nM_JQ1, MM1S_CDK9_5uM_JQ1, MM1S_CDK9_DMSO_1, MM1S_CDK9_DMSO_2, MM1S_CDK9_DMSO_MERGED, MM1S_CTCF, MM1S_DOT1L_LARS, MM1S_GR_DMSO, MM1S_H3K27AC_DMSO, MM1S_H3K4ME3_DMSO, MM1S_IRF4, MM1S_MED1_500nM_JQ1, MM1S_MED1_50nM_JQ1, MM1S_MED1_5nM_JQ1, MM1S_MED1_5uM_JQ1, MM1S_MED1_DMSO_1, MM1S_MED1_DMSO_2, MM1S_MED_DMSO_MERGED, MM1S_MYC_DMSO, MM1S_NFKB_MERGED, MM1S_RNA_POL2_150nM_JQ1, MM1S_RNA_POL2_24hr_JQ1, MM1S_RNA_POL2_500nM_JQ1, MM1S_RNA_POL2_50nM_JQ1, MM1S_RNA_POL2_5nM_JQ1, MM1S_RNA_POL2_5uM_JQ1, MM1S_RNA_POL2_DMSO, MM1S_RNA_POL2_DMSO_2, MM1S_RNA_POL2_DMSO_MERGED, MM1S_WCE_500nM_JQ1, MM1S_WCE_50nM_JQ1, MM1S_WCE_5nM_JQ1, MM1S_WCE_5uM_JQ1, MM1S_WCE_DMSO_1, MM1S_WCE_DMSO_2, MM1S_WCE_DMSO_MERGED, MM1S_WCE_GR, MM1S_WCE_WT, MM1S_p50, MM1S_p65, BE2C_BRD4, BE2C_H3K27AC, BE2C_H3K4ME3, BE2C_MYC, BE2C_MYCN, BE2C_RNA_POL2, BE2C_WCE, SKNAS_BRD4, SKNAS_H3K27AC, SKNAS_H3K4ME3, SKNAS_MYC, SKNAS_MYCN, SKNAS_RNA_POL2, SKNAS_WCE, SKNAS_WCE_2</value>
+          <propertyFile></propertyFile>
+          <propertyKey></propertyKey>
+          <defaultValue></defaultValue>
+          <defaultPropertyFile></defaultPropertyFile>
+          <defaultPropertyKey></defaultPropertyKey>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>gff</name>
           <description>&lt;p&gt;Enter .gff or genomic region e.g. chr1:+:1-1000</description>
@@ -145,16 +29,51 @@
           <description>&lt;p&gt;Choose either relative or uniform y axis scaling</description>
           <choices class="java.util.Arrays$ArrayList">
             <a class="string-array">
-              <string>UNIFORM</string>
-              <string>RELATIVE</string>
+              <string>uniform</string>
+              <string>relative</string>
             </a>
           </choices>
         </hudson.model.ChoiceParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>color</name>
-          <description>&lt;p&gt;an RGB value, e.g. 255,100,100 is a shade of red</description>
+          <description>&lt;p&gt;One or more RGB values, e.g. 255,100,100 is a shade of red.
+&lt;p&gt;Multiple RGB values (for multiple plot lines) can be separated with a colon, e.g. 255,0,0:255,125,0.
+&lt;p&gt;Leave blank to default to sampling the rainbow.
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Color&lt;/th&gt;
+    &lt;th&gt;RGB&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td bgcolor=&quot;#000000&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;0,0,0&lt;/td&gt;
+  &lt;/tr&gt;
+   &lt;tr&gt;
+    &lt;td bgcolor=&quot;#FF0000&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;255,0,0&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td bgcolor=&quot;#0000FF&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;0,0,255&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td bgcolor=&quot;#FF00FF&quot;&gt;&lt;/td&gt;
+    &lt;td&gt;255,0,255&lt;/td&gt;
+  &lt;/tr&gt; 
+&lt;/table&gt;
+For more RGB colors, see &lt;a href=&quot;http://www.rapidtables.com/web/color/RGB_Color.htm#color table&quot;&gt;this table&lt;/a&gt;.</description>
           <defaultValue>255,100,100</defaultValue>
         </hudson.model.StringParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>plot</name>
+          <description>&lt;p&gt;lines separately on multiple plots, or all lines on a single plot</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>multiple</string>
+              <string>single</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>email</name>
           <description>&lt;p&gt;Email addresss that the generated map will be emailed to, not required if you are logged in and have set your email address.
@@ -169,13 +88,13 @@
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@1.4.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@1.5.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <name></name>
         <refspec></refspec>
-        <url>https://github.com/bradnerComputation/pipeline.git</url>
+        <url>https://github.com/BradnerLab/pipeline.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -217,12 +136,18 @@
       <command>rm -rf output # remove any prior output directories
 mkdir output  # create a new output directory
 
-temporaryBamTable=/ark/home/jenkins/jobs/Bam_Plot/placeholder_data/masterBamTable.txt
+temporaryBamTable=$JENKINS_HOME/jobs/Bam_Plot/placeholder_data/masterBamTable.txt
 arguments=`python ~/scripts/bamPlotArgumentsFromTable.py $temporaryBamTable $selection`
 
 # arguments is something like &quot;/ifs/labs/bradner/bam/hg18/mm1s/05242012_D0WUYACXX_3.ACAGTG.hg18.bwt.sorted.bam -g HG18&quot;
 
-python bamPlot.py -n $selection -i $gff -y $y_scale -t plot_`date +&quot;%Y-%m-%d_%H%M&quot;`.pdf -o `pwd`/output/ -p SINGLE -b $arguments -c $color</command>
+if [ -z &quot;$color&quot; ]; then
+  color_arg=&quot;&quot;
+else
+  color_arg=&quot;-c $color&quot;
+fi
+
+python bamPlot.py -n $selection -i $gff -y $y_scale -t plot_`date +&quot;%Y-%m-%d_%H%M&quot;`.pdf -o `pwd`/output/ -p $plot -b $arguments $color_arg</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -255,7 +180,7 @@ $PROJECT_DEFAULT_CONTENT</body>
           <email>
             <recipientList></recipientList>
             <subject>Bam Plot PDF Generation Failed - $selection</subject>
-            <body>Bam plot pdf generation failed with the following parameters.  Please confirm that your gff and color is valid.  For assistance, please forward this email to a developer.
+            <body>Bam plot pdf generation failed with the following parameters.  Please confirm that you made at least one dataset selection.  Please also confirm that your gff and color is valid.  For assistance, please forward this email to a developer.
 
 $PROJECT_DEFAULT_CONTENT</body>
             <sendToDevelopers>false</sendToDevelopers>
@@ -274,6 +199,7 @@ $PROJECT_DEFAULT_CONTENT</body>
       <defaultContent>selection: $selection
 gff: $gff
 y_scale: $y_scale
+plot: $plot
 color: $color
 
 --------
