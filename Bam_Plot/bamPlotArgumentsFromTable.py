@@ -13,11 +13,11 @@ if len(sys.argv) != 3:
     print "Examples:"
     print ""
     print '\t$ python %s /mnt/d0-0/share/bradnerlab/projects/masterBamTable.txt "HG18,Multiple Myeloma,MM1S,MM1S_BRD4_500nM_JQ1"' % sys.argv[0]
-    print "\t/ifs/labs/bradner/bam/hg18/mm1s/05242012_D0WUYACXX_3.ACAGTG.hg18.bwt.sorted.bam -g HG18" 
+    print "\t/ifs/labs/bradner/bam/hg18/mm1s/05242012_D0WUYACXX_3.ACAGTG.hg18.bwt.sorted.bam -g HG18 -n MM1S_BRD4_500nM_JQ1" 
     print "\t$"
     print ""
     print '\t$ python %s /mnt/d0-0/share/bradnerlab/projects/masterBamTable.txt "HG18,Multiple Myeloma,MM1S,MM1S_BRD4_500nM_JQ1,,HG18,Diffuse large B-cell lymphoma,LY1,LY1_BCL6_DMSO"' % sys.argv[0]
-    print "\t/ifs/labs/bradner/bam/hg18/mm1s/05242012_D0WUYACXX_3.ACAGTG.hg18.bwt.sorted.bam,/ifs/labs/bradner/bam/hg18/ly1/06152012_C0VD4ACXX_6.AGTTCC.hg18.bwt.sorted.bam -g HG18" 
+    print "\t/ifs/labs/bradner/bam/hg18/mm1s/05242012_D0WUYACXX_3.ACAGTG.hg18.bwt.sorted.bam,/ifs/labs/bradner/bam/hg18/ly1/06152012_C0VD4ACXX_6.AGTTCC.hg18.bwt.sorted.bam -g HG18 -n MM1S_BRD4_500nM_JQ1,LY1_BCL6_DMSO" 
     print "\t$"
     sys.exit(-1)
 
@@ -65,5 +65,5 @@ if files == "":
     print "Record not found for name '%s' in %s" % (name, table_data_file_name) 
     sys.exit(1)
 else:
-    print "%s -g %s" % (files, genome) 
+    print "%s -g %s -n %s" % (files, genome, ",".join(names)) 
     

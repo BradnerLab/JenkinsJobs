@@ -6,22 +6,23 @@
   <properties>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
-        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.28">
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition plugin="extended-choice-parameter@0.29-SNAPSHOT">
           <name>selection</name>
-          <description>&lt;p&gt;Dataset selection, organized by genome, then by source, then by cell type.  Hold down the control or command key to select more than one.  &lt;p&gt;The different categories of selections are listed below.  Please note that you can press a key to skip to the appropriate section (e.g. hit the &quot;b&quot; key when in the drop down menu to skip to the BE2C section).  &lt;table style=&quot;border:1px solid black;border-collapse:collapse;&quot;&gt; &lt;tr&gt;  &lt;th style=&quot;border:1px solid black;&quot;&gt;Selection&lt;/th&gt;  &lt;th style=&quot;border:1px solid black;&quot;&gt;Genome&lt;/th&gt;  &lt;th style=&quot;border:1px solid black;&quot;&gt;Source&lt;/th&gt;  &lt;th style=&quot;border:1px solid black;&quot;&gt;Cell Type&lt;/th&gt; &lt;/tr&gt; &lt;tr&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;LY1_*&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;Diffuse large B-cell lymphoma&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;LY1&lt;/td&gt; &lt;tr&gt; &lt;tr&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;MM1S_*&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;Multiple Myeloma&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;MM1S&lt;/td&gt; &lt;tr&gt; &lt;tr&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;BE2C_*&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;Neuroblastoma&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;BE2C&lt;/td&gt; &lt;tr&gt; &lt;tr&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;SKNAS_*&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;HG18&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;Neuroblastoma&lt;/td&gt;  &lt;td style=&quot;border:1px solid black;&quot;&gt;SKNAS&lt;/td&gt; &lt;tr&gt; &lt;/table&gt;</description>
+          <description></description>
           <quoteValue>false</quoteValue>
           <visibleItemCount>5</visibleItemCount>
-          <type>PT_MULTI_SELECT</type>
-          <value></value>
-          <propertyFile>/ark/home/jenkins/jobs/Bam_Plot/placeholder_data/selectionChoicesPropertyFile.txt</propertyFile>
-          <propertyKey>selectionChoices</propertyKey>
+          <type>PT_MULTI_LEVEL_MULTI_SELECT</type>
+          <value>GENOME,SOURCE,CELL_TYPE,NAME</value>
+          <propertyFile>/mnt/d0-0/share/bradnerlab/projects/masterBamTable.txt</propertyFile>
+          <propertyKey></propertyKey>
           <defaultValue></defaultValue>
           <defaultPropertyFile></defaultPropertyFile>
           <defaultPropertyKey></defaultPropertyKey>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
         </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>gff</name>
-          <description>&lt;p&gt;Enter .gff or genomic region e.g. chr1:+:1-1000</description>
+          <description>&lt;p&gt;Enter .gff or genomic region, e.g. chr1:+:1-1000</description>
           <defaultValue>chr6:+:332864-356961</defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.ChoiceParameterDefinition>
@@ -36,9 +37,9 @@
         </hudson.model.ChoiceParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>color</name>
-          <description>&lt;p&gt;One or more RGB values, e.g. 255,100,100 is a shade of red.
-&lt;p&gt;Multiple RGB values (for multiple plot lines) can be separated with a colon, e.g. 255,0,0:255,125,0.
-&lt;p&gt;Leave blank to default to sampling the rainbow.
+          <description>&lt;p&gt;Leave blank to default to sampling the rainbow.
+&lt;p&gt;Alternatively, you may specify one or more RGB values, e.g. 255,100,100 is a shade of red.
+&lt;p&gt;Multiple RGB values (for multiple plot lines) can be separated with a colon, e.g. 255,0,0:255,125,0
 &lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;Color&lt;/th&gt;
@@ -62,7 +63,7 @@
   &lt;/tr&gt; 
 &lt;/table&gt;
 For more RGB colors, see &lt;a href=&quot;http://www.rapidtables.com/web/color/RGB_Color.htm#color table&quot;&gt;this table&lt;/a&gt;.</description>
-          <defaultValue>255,100,100</defaultValue>
+          <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.ChoiceParameterDefinition>
           <name>plot</name>
@@ -137,9 +138,9 @@ For more RGB colors, see &lt;a href=&quot;http://www.rapidtables.com/web/color/R
 mkdir output  # create a new output directory
 
 masterBamTable=/mnt/d0-0/share/bradnerlab/projects/masterBamTable.txt
-arguments=`python ~/scripts/bamPlotArgumentsFromTable.py $masterBamTable $selection`
+arguments=`python ~/scripts/bamPlotArgumentsFromTable.py $masterBamTable &quot;$selection&quot;`
 
-# arguments is something like &quot;/ifs/labs/bradner/bam/hg18/mm1s/05242012_D0WUYACXX_3.ACAGTG.hg18.bwt.sorted.bam -g HG18&quot;
+# arguments is something like &quot;/ifs/labs/bradner/bam/hg18/mm1s/05242012_D0WUYACXX_3.ACAGTG.hg18.bwt.sorted.bam -g HG18 -n MM1S_BRD4_500nM_JQ1&quot;
 
 if [ -z &quot;$color&quot; ]; then
   color_arg=&quot;&quot;
@@ -147,7 +148,7 @@ else
   color_arg=&quot;-c $color&quot;
 fi
 
-python bamPlot.py -n $selection -i $gff -y $y_scale -t plot_`date +&quot;%Y-%m-%d_%H%M&quot;`.pdf -o `pwd`/output/ -p $plot -b $arguments $color_arg</command>
+python bamPlot.py -i $gff -y $y_scale -t plot_`date +&quot;%Y-%m-%d_%H%M&quot;`.pdf -o `pwd`/output/ -p $plot -b $arguments $color_arg</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -179,7 +180,7 @@ $PROJECT_DEFAULT_CONTENT</body>
         <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
           <email>
             <recipientList></recipientList>
-            <subject>Bam Plot PDF Generation Failed - $selection</subject>
+            <subject>Bam Plot PDF Generation Failed</subject>
             <body>Bam plot pdf generation failed with the following parameters.  Please confirm that you made at least one dataset selection.  Please also confirm that your gff and color is valid.  For assistance, please forward this email to a developer.
 
 $PROJECT_DEFAULT_CONTENT</body>
@@ -195,7 +196,7 @@ $PROJECT_DEFAULT_CONTENT</body>
         </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
       </configuredTriggers>
       <contentType>default</contentType>
-      <defaultSubject>Generated Bam Plot PDF - $selection</defaultSubject>
+      <defaultSubject>Generated Bam Plot PDF</defaultSubject>
       <defaultContent>selection: $selection
 gff: $gff
 y_scale: $y_scale
