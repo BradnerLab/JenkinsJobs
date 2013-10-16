@@ -52,14 +52,16 @@ genome = ""
 
 with open(table_data_file_name, 'r') as table_data_file:
     reader = csv.reader(table_data_file, delimiter='\t')
-   
-    for record in reader:
-        if record[name_col] in names:
-            if len(files) > 0:
-                files += ","
-            files += record[file_col]
-            genome = record[genome_col]
 
+    for name in names: 
+        table_data_file.seek(0) # always start at beginning of file
+        for record in reader:
+            if record[name_col] == name:
+                if len(files) > 0:
+                    files += ","
+                files += record[file_col]
+                genome = record[genome_col]
+                break
 
 if files == "":
     print "Record not found for name '%s' in %s" % (name, table_data_file_name) 
