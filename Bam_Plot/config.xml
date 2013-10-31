@@ -5,20 +5,20 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.security.AuthorizationMatrixProperty>
-      <permission>hudson.model.Run.Delete:authenticated</permission>
-      <permission>hudson.model.Item.Workspace:anonymous</permission>
-      <permission>hudson.model.Item.Workspace:authenticated</permission>
       <permission>hudson.model.Item.Read:anonymous</permission>
       <permission>hudson.model.Item.Read:authenticated</permission>
-      <permission>hudson.model.Run.Update:anonymous</permission>
-      <permission>hudson.model.Run.Update:authenticated</permission>
       <permission>hudson.model.Item.Discover:anonymous</permission>
       <permission>hudson.model.Item.Discover:authenticated</permission>
+      <permission>hudson.model.Run.Delete:authenticated</permission>
       <permission>hudson.model.Item.Cancel:anonymous</permission>
       <permission>hudson.model.Item.Cancel:authenticated</permission>
-      <permission>hudson.scm.SCM.Tag:authenticated</permission>
       <permission>hudson.model.Item.Build:anonymous</permission>
       <permission>hudson.model.Item.Build:authenticated</permission>
+      <permission>hudson.model.Run.Update:anonymous</permission>
+      <permission>hudson.model.Run.Update:authenticated</permission>
+      <permission>hudson.scm.SCM.Tag:authenticated</permission>
+      <permission>hudson.model.Item.Workspace:anonymous</permission>
+      <permission>hudson.model.Item.Workspace:authenticated</permission>
     </hudson.security.AuthorizationMatrixProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
@@ -93,7 +93,7 @@ For more RGB colors, see &lt;a href=&quot;http://www.rapidtables.com/web/color/R
         </hudson.model.ChoiceParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>email</name>
-          <description>&lt;p&gt;Email addresss that the generated map will be emailed to, not required if you are logged in and have set your email address.
+          <description>&lt;p&gt;Email address that the generated map will be emailed to, not required if you are logged in and have set your email address.
 
 &lt;p&gt;You can &lt;a href=&quot;../../login&quot;&gt;log in&lt;/a&gt; using your TOD Linux user name and password.  You can configure your email address by clicking your name at &lt;a href=&quot;../../asynchPeople/&quot;&gt;the people page&lt;/a&gt; and then clicking the &quot;Configure&quot; &lt;img src=&quot;../../static/3880e91f/images/24x24/setting.png&quot; alt=&quot;configure_icon&quot;&gt;link.
 
